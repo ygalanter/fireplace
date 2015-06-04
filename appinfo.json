@@ -1,0 +1,34 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "yuri@galanter.net",
+    "longName": "Fireplace",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "data/Animated_fire_by_nevit.png",
+                "name": "ANIMATION",
+                "type": "raw"
+            },
+            {
+                "characterRegex": "[0-9]",
+                "file": "fonts/Futura Extra Bold.ttf",
+                "name": "FUTURA_60",
+                "type": "font"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "Fireplace",
+    "targetPlatforms": [
+        "basalt"
+    ],
+    "uuid": "10e8255b-96ae-47c1-82af-b70b943ba7ed",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
