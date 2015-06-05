@@ -9,14 +9,20 @@
     "resources": {
         "media": [
             {
-                "file": "data/Animated_fire_by_nevit.png",
+                "file": "images/menu.png",
+                "menuIcon": true,
+                "name": "MENU",
+                "type": "png"
+            },
+            {
+                "file": "data/fire.png",
                 "name": "ANIMATION",
                 "type": "raw"
             },
             {
                 "characterRegex": "[0-9]",
                 "file": "fonts/Futura Extra Bold.ttf",
-                "name": "FUTURA_60",
+                "name": "FUTURA_59",
                 "type": "font"
             }
         ]
