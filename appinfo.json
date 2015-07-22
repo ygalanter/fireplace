@@ -15,15 +15,15 @@
                 "type": "png"
             },
             {
-                "file": "data/fire.png",
-                "name": "ANIMATION",
-                "type": "raw"
-            },
-            {
                 "characterRegex": "[0-9]",
                 "file": "fonts/Futura Extra Bold.ttf",
                 "name": "FUTURA_59",
                 "type": "font"
+            },
+            {
+                "file": "data/fire.png",
+                "name": "ANIMATION",
+                "type": "raw"
             }
         ]
     },
@@ -33,7 +33,7 @@
         "basalt"
     ],
     "uuid": "10e8255b-96ae-47c1-82af-b70b943ba7ed",
-    "versionLabel": "1.0",
+    "versionLabel": "1.1",
     "watchapp": {
         "watchface": true
     }
