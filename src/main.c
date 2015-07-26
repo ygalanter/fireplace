@@ -1,9 +1,12 @@
 #include <pebble.h>
+#include "main.h"
 #include "effect_layer.h"  
 
 static Window *s_main_window;
 
-static GBitmapSequence *s_sequence = NULL;
+#ifdef PBL_PLATFORM_BASALT
+  static GBitmapSequence *s_sequence = NULL;
+#endif
 
 EffectLayer *effect_layer;
 static EffectMask mask;
@@ -24,13 +27,15 @@ void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
     strftime(hhmmm, sizeof(hhmmm), "%H%M", tick_time);
     mask.text = hhmmm;
   
+  
 }
 
+#ifdef PBL_PLATFORM_BASALT
 
 static void timer_handler(void *context) {
   uint32_t next_delay;
 
-  // Advance to the next APNG frame
+  // Advance to the next frame
   if(gbitmap_sequence_update_bitmap_next_frame(s_sequence,  mask.bitmap_background, &next_delay)) {
     
     layer_mark_dirty(window_get_root_layer(s_main_window));
@@ -45,6 +50,38 @@ static void timer_handler(void *context) {
   
 }
 
+#else
+  int frame_counter = 0;
+  static void timer_handler(void *context) {
+  
+
+  // Advance to the next  frame
+  if(frame_counter < NO_OF_FRAMES) {
+    
+    if (mask.bitmap_background != NULL) {
+      gbitmap_destroy(mask.bitmap_background);
+      mask.bitmap_background = NULL;
+    }
+    
+    mask.bitmap_background = gbitmap_create_with_resource(fire_aplite_res[frame_counter]);
+        
+    layer_mark_dirty(window_get_root_layer(s_main_window));
+    frame_counter++;
+
+  } else {
+    // Start again
+    frame_counter = 0;
+    
+  }
+  
+  app_timer_register(100, timer_handler, NULL);   
+  
+}
+
+  
+#endif
+
+
 static void main_window_load(Window *window) {
   
   
@@ -53,24 +90,31 @@ static void main_window_load(Window *window) {
   mask.mask_color = GColorWhite;
   mask.text_align = GTextAlignmentCenter;
   mask.font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FUTURA_59));
-  
-  effect_layer = effect_layer_create(GRect(10,15,130,125));
+    
+  effect_layer = effect_layer_create(GRect(7, 21 ,130, 125));
   effect_layer_add_effect(effect_layer, effect_mask, &mask);
-  layer_add_child(window_get_root_layer(window), effect_layer_get_layer(effect_layer));
+  layer_add_child(window_get_root_layer(s_main_window), effect_layer_get_layer(effect_layer));
   
-  
-  // begin APNG animation sequence
-  s_sequence = gbitmap_sequence_create_with_resource(RESOURCE_ID_ANIMATION);
-  mask.bitmap_background  = gbitmap_create_blank(gbitmap_sequence_get_bitmap_size(s_sequence), GBitmapFormat8Bit);
+  // begin animation sequence
+  #ifdef PBL_PLATFORM_BASALT
+    s_sequence = gbitmap_sequence_create_with_resource(RESOURCE_ID_ANIMATION);
+    mask.bitmap_background  = gbitmap_create_blank(gbitmap_sequence_get_bitmap_size(s_sequence), GBitmapFormat8Bit);
+  #else
+    mask.bitmap_background = gbitmap_create_with_resource(fire_aplite_res[0]);
+  #endif
+
   app_timer_register(100, timer_handler, NULL);
 }
 
 static void main_window_unload(Window *window) {
   
+  #ifdef PBL_PLATFORM_BASALT
     gbitmap_sequence_destroy(s_sequence);
-    gbitmap_destroy(mask.bitmap_background );
+  #endif
+
+  gbitmap_destroy(mask.bitmap_background );
+  effect_layer_destroy(effect_layer);
   
-    effect_layer_destroy(effect_layer);
 }
 
 static void init() {
@@ -80,11 +124,11 @@ static void init() {
     .load = main_window_load,
     .unload = main_window_unload,
   });
-  window_stack_push(s_main_window, true);
+  window_stack_push(s_main_window, false);
   
   tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
   
-   //Get a time structure so that the face doesn't start blank
+  //Get a time structure so that the face doesn't start blank
   time_t temp = time(NULL);
   struct tm *t = localtime(&temp);
  
