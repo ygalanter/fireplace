@@ -9,29 +9,8 @@
     "resources": {
         "media": [
             {
-                "file": "images/menu_bw.png",
-                "menuIcon": true,
-                "name": "MENU",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-025.png",
-                "name": "BW_FIRE_FRAME_25",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-024.png",
-                "name": "BW_FIRE_FRAME_24",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-023.png",
-                "name": "BW_FIRE_FRAME_23",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-022.png",
-                "name": "BW_FIRE_FRAME_22",
+                "file": "images/frame-002.png",
+                "name": "BW_FIRE_FRAME_2",
                 "type": "png"
             },
             {
@@ -40,8 +19,28 @@
                 "type": "png"
             },
             {
-                "file": "images/frame-020.png",
-                "name": "BW_FIRE_FRAME_20",
+                "file": "images/frame-025.png",
+                "name": "BW_FIRE_FRAME_25",
+                "type": "png"
+            },
+            {
+                "file": "images/frame-013.png",
+                "name": "BW_FIRE_FRAME_13",
+                "type": "png"
+            },
+            {
+                "file": "images/frame-001.png",
+                "name": "BW_FIRE_FRAME_1",
+                "type": "png"
+            },
+            {
+                "file": "images/frame-011.png",
+                "name": "BW_FIRE_FRAME_11",
+                "type": "png"
+            },
+            {
+                "file": "images/frame-008.png",
+                "name": "BW_FIRE_FRAME_8",
                 "type": "png"
             },
             {
@@ -52,6 +51,88 @@
             {
                 "file": "images/frame-018.png",
                 "name": "BW_FIRE_FRAME_18",
+                "type": "png"
+            },
+            {
+                "file": "images/frame-023.png",
+                "name": "BW_FIRE_FRAME_23",
+                "type": "png"
+            },
+            {
+                "file": "images/frame-004.png",
+                "name": "BW_FIRE_FRAME_4",
+                "type": "png"
+            },
+            {
+                "file": "images/frame-024.png",
+                "name": "BW_FIRE_FRAME_24",
+                "type": "png"
+            },
+            {
+                "file": "images/frame-003.png",
+                "name": "BW_FIRE_FRAME_3",
+                "type": "png"
+            },
+            {
+                "file": "images/frame-005.png",
+                "name": "BW_FIRE_FRAME_5",
+                "type": "png"
+            },
+            {
+                "characterRegex": "[0-9]",
+                "file": "fonts/Futura Extra Bold.ttf",
+                "name": "FUTURA_59",
+                "type": "font"
+            },
+            {
+                "file": "images/frame-009.png",
+                "name": "BW_FIRE_FRAME_9",
+                "type": "png"
+            },
+            {
+                "file": "images/frame-022.png",
+                "name": "BW_FIRE_FRAME_22",
+                "type": "png"
+            },
+            {
+                "file": "images/frame-020.png",
+                "name": "BW_FIRE_FRAME_20",
+                "type": "png"
+            },
+            {
+                "file": "data/dummy_fire_animation.png",
+                "name": "ANIMATION",
+                "type": "raw"
+            },
+            {
+                "file": "images/frame-012.png",
+                "name": "BW_FIRE_FRAME_12",
+                "type": "png"
+            },
+            {
+                "file": "images/frame-006.png",
+                "name": "BW_FIRE_FRAME_6",
+                "type": "png"
+            },
+            {
+                "file": "images/frame-014.png",
+                "name": "BW_FIRE_FRAME_14",
+                "type": "png"
+            },
+            {
+                "file": "images/frame-007.png",
+                "name": "BW_FIRE_FRAME_7",
+                "type": "png"
+            },
+            {
+                "file": "images/menu_bw.png",
+                "menuIcon": true,
+                "name": "MENU",
+                "type": "png"
+            },
+            {
+                "file": "images/frame-010.png",
+                "name": "BW_FIRE_FRAME_10",
                 "type": "png"
             },
             {
@@ -68,87 +149,6 @@
                 "file": "images/frame-015.png",
                 "name": "BW_FIRE_FRAME_15",
                 "type": "png"
-            },
-            {
-                "file": "images/frame-014.png",
-                "name": "BW_FIRE_FRAME_14",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-013.png",
-                "name": "BW_FIRE_FRAME_13",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-012.png",
-                "name": "BW_FIRE_FRAME_12",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-011.png",
-                "name": "BW_FIRE_FRAME_11",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-010.png",
-                "name": "BW_FIRE_FRAME_10",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-009.png",
-                "name": "BW_FIRE_FRAME_9",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-008.png",
-                "name": "BW_FIRE_FRAME_8",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-007.png",
-                "name": "BW_FIRE_FRAME_7",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-006.png",
-                "name": "BW_FIRE_FRAME_6",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-005.png",
-                "name": "BW_FIRE_FRAME_5",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-004.png",
-                "name": "BW_FIRE_FRAME_4",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-003.png",
-                "name": "BW_FIRE_FRAME_3",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-002.png",
-                "name": "BW_FIRE_FRAME_2",
-                "type": "png"
-            },
-            {
-                "file": "images/frame-001.png",
-                "name": "BW_FIRE_FRAME_1",
-                "type": "png"
-            },
-            {
-                "file": "data/dummy_fire_animation.png",
-                "name": "ANIMATION",
-                "type": "raw"
-            },
-            {
-                "characterRegex": "[0-9]",
-                "file": "fonts/Futura Extra Bold.ttf",
-                "name": "FUTURA_59",
-                "type": "font"
             }
         ]
     },
@@ -159,7 +159,7 @@
         "basalt"
     ],
     "uuid": "10e8255b-96ae-47c1-82af-b70b943ba7ed",
-    "versionLabel": "1.2",
+    "versionLabel": "1.3",
     "watchapp": {
         "watchface": true
     }
