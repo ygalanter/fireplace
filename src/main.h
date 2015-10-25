@@ -1,6 +1,6 @@
 #include <pebble.h>
 
-#ifndef PBL_PLATFORM_BASALT  
+#ifdef PBL_PLATFORM_APLITE
   
 #define NO_OF_FRAMES 25  
 

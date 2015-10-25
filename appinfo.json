@@ -156,7 +156,8 @@
     "shortName": "Fireplace",
     "targetPlatforms": [
         "aplite",
-        "basalt"
+        "basalt",
+        "chalk"
     ],
     "uuid": "10e8255b-96ae-47c1-82af-b70b943ba7ed",
     "versionLabel": "1.3",

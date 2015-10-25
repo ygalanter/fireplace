@@ -4,7 +4,7 @@
 
 static Window *s_main_window;
 
-#ifdef PBL_PLATFORM_BASALT
+#ifndef PBL_PLATFORM_APLITE
   static GBitmapSequence *s_sequence = NULL;
 #endif
 
@@ -30,7 +30,7 @@ void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
   
 }
 
-#ifdef PBL_PLATFORM_BASALT
+#ifndef PBL_PLATFORM_APLITE
 
 static void timer_handler(void *context) {
   uint32_t next_delay;
@@ -87,16 +87,25 @@ static void main_window_load(Window *window) {
   
   //create effect layer for transparent mask
   mask.background_color = GColorBlack;
-  mask.mask_color = GColorWhite;
+  
+  mask.mask_colors = malloc(sizeof(GColor)*2);
+  mask.mask_colors[0] = GColorWhite;
+  mask.mask_colors[1] = GColorClear;
+  
   mask.text_align = GTextAlignmentCenter;
   mask.font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FUTURA_59));
-    
-  effect_layer = effect_layer_create(GRect(7, 21 ,130, 125));
+  
+  #ifndef PBL_ROUND
+      effect_layer = effect_layer_create(GRect(7, 21 ,130, 125));
+  #else
+      effect_layer = effect_layer_create(GRect(27, 21 ,130, 125));
+  #endif  
+  
   effect_layer_add_effect(effect_layer, effect_mask, &mask);
   layer_add_child(window_get_root_layer(s_main_window), effect_layer_get_layer(effect_layer));
   
   // begin animation sequence
-  #ifdef PBL_PLATFORM_BASALT
+  #ifndef PBL_PLATFORM_APLITE
     s_sequence = gbitmap_sequence_create_with_resource(RESOURCE_ID_ANIMATION);
     mask.bitmap_background  = gbitmap_create_blank(gbitmap_sequence_get_bitmap_size(s_sequence), GBitmapFormat8Bit);
   #else
@@ -108,7 +117,7 @@ static void main_window_load(Window *window) {
 
 static void main_window_unload(Window *window) {
   
-  #ifdef PBL_PLATFORM_BASALT
+  #ifndef PBL_PLATFORM_APLITE
     gbitmap_sequence_destroy(s_sequence);
   #endif
 
