@@ -1,0 +1,62 @@
+[
+  {
+    "type": "heading",
+    "defaultValue": "Fireplace"
+  },
+  {
+    "type": "section",
+    "capabilities": [
+      "PLATFORM_EMERY"
+    ],
+    "items": [
+      {
+        "type": "toggle",
+        "messageKey": "BACKLIGHT",
+        "label": "Flickering backlight",
+        "description": "Keeps the backlight on, flickering in the colors of the flames, for as long as this face is showing. Drains the battery much faster.",
+        "defaultValue": true
+      }
+    ]
+  },
+  {
+    "type": "section",
+    "capabilities": [
+      "NOT_PLATFORM_APLITE",
+      "NOT_PLATFORM_BASALT",
+      "NOT_PLATFORM_CHALK",
+      "NOT_PLATFORM_DIORITE",
+      "NOT_PLATFORM_GABBRO"
+    ],
+    "items": [
+      {
+        "type": "toggle",
+        "messageKey": "SOUND",
+        "label": "Crackling sound",
+        "description": "A very quiet fireplace crackle. Stays silent during Quiet Time and when the speaker is muted",
+        "defaultValue": true
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "defaultValue": "This watch has no settings for Fireplace. The flickering backlight and crackling sound need hardware it doesn't have.",
+    "capabilities": [
+      "NOT_PLATFORM_EMERY",
+      "NOT_PLATFORM_FLINT"
+    ]
+  },
+  {
+    "type": "submit",
+    "defaultValue": "Save",
+    "capabilities": [
+      "PLATFORM_EMERY"
+    ]
+  },
+  {
+    "type": "submit",
+    "defaultValue": "Save",
+    "capabilities": [
+      "PLATFORM_FLINT"
+    ]
+  }
+]
